@@ -1,5 +1,7 @@
 -@coins.each do |coin|
-  %p= coin.base
-  %p= coin.target
-  %br/
-  HELLO IM WORKING
+  -# Not sure but i think you can make ajax requests by adding method: method-name, remote: :true to line below
+  -# pero di ko pa alam paano paganahin, maybe next time
+  =link_to trade_path(base: coin.base, target: coin.target, id:coin.id) do
+    .coin-list-wrapper
+      %p= coin.base
+      %p= coin.target

@@ -1,7 +1,5 @@
 Pages#index
 
-=react_component("HelloWorld", { greeting: "ssss" })
-
 -if current_user
   =current_user.username
   =link_to "Sign out", destroy_user_session_path, method: :delete

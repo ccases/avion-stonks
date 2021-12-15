@@ -56,6 +56,123 @@ coins = Coin.create(
         {
             target: 'USDT',
             base: 'BNB'
-        }
+        },
+        {
+            target: 'USDT',
+            base: 'YGG'
+        },
+        {
+            target: 'USDT',
+            base: '1INCH'
+        },
+        {
+            target: 'USDT',
+            base: 'ADA'
+        },
+        {
+            target: 'USDT',
+            base: 'ALGO'
+        },
+        {
+            target: 'USDT',
+            base: 'BAT'
+        },
+        {
+            target: 'USDT',
+            base: 'BHC'
+        },
+        {
+            target: 'USDT',
+            base: 'BURGER'
+        },
+        {
+            target: 'USDT',
+            base: 'CAKE'
+        },
+        {
+            target: 'USDT',
+            base: 'COTI'
+        },
+        {
+            target: 'USDT',
+            base: 'CTSI'
+        },
+        {
+            target: 'USDT',
+            base: 'DENT'
+        },
+        {
+            target: 'USDT',
+            base: 'DOGE'
+        },
+        {
+            target: 'USDT',
+            base: 'DOT'
+        },
+        {
+            target: 'USDT',
+            base: 'EGLD'
+        },
+        {
+            target: 'USDT',
+            base: 'ENJ'
+        },
+        {
+            target: 'USDT',
+            base: 'FET'
+        },
+        {
+            target: 'USDT',
+            base: 'FIDA'
+        },
+        {
+            target: 'USDT',
+            base: 'FIL'
+        },
+        {
+            target: 'USDT',
+            base: 'GALA'
+        },
+        {
+            target: 'USDT',
+            base: 'GTO'
+        },
+        {
+            target: 'USDT',
+            base: 'IOTA'
+        },
+        {
+            target: 'USDT',
+            base: 'LTO'
+        },
+        {
+            target: 'USDT',
+            base: 'MANA'
+        },
+        {
+            target: 'USDT',
+            base: 'MATIC'
+        },
+        {
+            target: 'USDT',
+            base: 'OGN'
+        },
+        {
+            target: 'USDT',
+            base: 'ONE'
+        },
+        {
+            target: 'USDT',
+            base: 'POLY'
+        },
+        {
+            target: 'USDT',
+            base: 'PUNDIX'
+        },
+        {
+            target: 'USDT',
+            base: 'SHIB'
+        },
+
     ]
 )

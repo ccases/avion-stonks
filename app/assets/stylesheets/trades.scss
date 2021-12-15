@@ -14,3 +14,30 @@
         
     }
 }
+
+.coins-list-container{
+    width:320;
+}
+.coin-list-wrapper{
+    padding: 3px;
+    margin: 0;
+    height: fit-content;
+    display:flex;
+    flex-flow:row;
+    width:100%;
+    p{
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        margin:0;
+        padding:0;
+    }
+    &:hover{
+        background-color: gray;
+    }
+}
+
+.tradingview-widget-container{
+    width:clamp(600px, 100%, 900px);
+}
