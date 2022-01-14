@@ -3,7 +3,7 @@ require 'httparty'
 class Coin < ApplicationRecord
   has_many :orders
   has_many :portfolios
-  validate :coin_is_listed_in_binance, :target_is_usdt
+  # validate :coin_is_listed_in_binance, :target_is_usdt
   validates :target, uniqueness: { scope: :base }
 
 
