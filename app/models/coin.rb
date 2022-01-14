@@ -5,12 +5,26 @@ class Coin < ApplicationRecord
   has_many :portfolios
   # validate :coin_is_listed_in_binance, :target_is_usdt
   validates :target, uniqueness: { scope: :base }
-
+  validates :base, :coingecko_id, presence: true
+  
 
   @coin_ids = []
   @coin_id_relation = []
   @coingecko_list = [] # contains all coins listed in gecko
   @client = Coingecko::Client
+
+  def coin_is_listed
+    @client = Coingecko::Client
+    res = @client.list
+
+    self.base&.upcase!
+    self.target&.upcase!
+    self.coingecko_id&.downcase!
+
+    listed = res[:data].select{|coin| coin["symbol"] == base && coin["id"] == coingecko_id}
+
+    return errors.add(:base, "Coin-pair may not be listed on Coingecko.") unless listed.length > 0
+  end
 
   def self.update_price
     @client = Coingecko::Client

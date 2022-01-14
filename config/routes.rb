@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "/admins/users", to: "admins#users"
   get "/admins/coins", to: "admins#coins"
   post "/admins/coins/:id", to: "coins#destroy"
+  post "/admins/users/:id", to: "users#destroy"
   get "/admins", to: "admins#index"
 
   resources :trades, param: :base

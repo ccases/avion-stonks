@@ -45,7 +45,7 @@ RSpec.describe "Devise", type: :feature do
       select "User", :from => "user[kind]"
       click_button('Sign up')
 
-      expect(page).to have_content("prohibited this user")
+      expect(page).to have_content("Password")
     end
 
     it "signs in right after signing up" do
