@@ -4,7 +4,7 @@
 
 .order-item-container{
     display:grid;
-    grid-template-columns: 100px 200px 200px 1fr 200px;
+    grid-template-columns: 100px 200px 200px 1fr 1fr 200px;
     place-items:center;
     padding: 2px;
     border-bottom: 1px solid rgba(255,255,255, 0.25);

@@ -6,6 +6,7 @@
       %p.orders-index-data=Coin.find(o.coin_id).base
       %p.orders-index-data=o.quantity
       %p.orders-index-data=o.price
+      %p.orders-index-data=(o.quantity * o.price).truncate(2)
       %p.orders-index-data
         -if o.kind == "buy"
           Buy
