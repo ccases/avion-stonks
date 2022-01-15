@@ -156,3 +156,66 @@ Coingecko::Client.price(ids)[:data]
 #     }
 #   }
 ```
+
+### Get Trending Coins
+
+Get the top 7 most searched coins in the last 24 hours accodring to CoinGecko.
+
+- Parameters: none
+- Returns: an arrary that consists of coins searched on CoinGecko
+**Example**
+```ruby
+
+Coingecko::Client.trending_coins[:data]
+# => { 
+#  "item" => 
+#         {id"=>"moonbeam", 
+#          "coin_id"=>22459, 
+#          "name"=>"Moonbeam", 
+#          "symbol"=>"GLMR", 
+#          "market_cap_rank"=>106, 
+#          "thumb"=>"https://assets.coingecko.com/coins/images/22459/thumb/glmr.png?1641880985", 
+#          "small"=>"https://assets.coingecko.com/coins/images/22459/small/glmr.png?1641880985", 
+#          "large"=>"https://assets.coingecko.com/coins/images/22459/large/glmr.png?1641880985", 
+#          "slug"=>"moonbeam", "price_btc"=>0.00034131017886321487, 
+#          "score"=>0
+#         }
+#      }
+```
+### Get Exhange Volume Chart 
+
+Gets the volume chart data for a given exhange. 
+
+- Parameters
+  - string id of the exhange to be searched such as "binance_us" for Binance Exchange
+  - number of days of the charts data history  e.g 1 for yesterday's data, 14 for the last two weeks and 30 for the last month.
+- Returns an array of historical data of the price of the coin
+
+**Example**
+```ruby
+
+Coingecko::Client.volume_chart(id, days)[:data]
+# => [
+#     [1642077000000.0, "11646.6655883148793193045820240998249572736511997237429313689168986422958"],
+#     [1642077600000.0, "11646.6655883148793193045820240998249572736511997237429313689168986422958"],
+#     [1642078200000.0, "11646.6655883148793193045820240998249572736511997237429313689168986422958"],
+#     [1642078800000.0, "11525.6721424616634085053088114429887741208728267601626624759370786332976"],
+#     [1642079400000.0, "11525.6721424616634085053088114429887741208728267601626624759370786332976"],
+#     ]
+#     
+```
+
+### Get Ping
+
+Gets the API server status
+
+- Parameters: none
+- Returns an array containing a message on the server status
+
+**Example**
+```ruby
+Coingecko::Client.ping[:data]
+# => {"gecko_says"=>"(V3) To the Moon!"}
+```
+
+

@@ -53,6 +53,13 @@ RSpec.describe "Admin controls", type: :feature do
     fill_in "coin[coingecko_id]", with: coingecko_id
   end
 
+  def fill_user
+    click_link('Add new user')
+    fill_in "user[email]", with: "hello1@avion.com"
+    fill_in "user[password]", with: "123456"
+    fill_in "user[password_confirmation]", with: "123456"
+  end
+
   before {seed_users}
   before {seed_coins}
 
@@ -96,16 +103,40 @@ RSpec.describe "Admin controls", type: :feature do
       expect(page).to have_content("prohibited this coin from being saved")
     end
 
-    it "fails to add on non-binance coins" do
-      fill_coins(base: "POOCOIN", coingecko_id: "poocoin")
-      click_button('Create Coin')
-      expect(page).to have_content("may not be listed on binance")
-    end
+    # it "fails to add on non-binance coins" do
+    #   fill_coins(base: "POOCOIN", coingecko_id: "poocoin")
+    #   click_button('Create Coin')
+    #   expect(page).to have_content("may not be listed on binance")
+    # end
 
     it "adds a proper coin" do
       fill_coins(base: "MANA", coingecko_id: "decentraland")
       click_button('Create Coin')
-      expect(page).to have_content("successfully added")
+      expect(page).to have_content("MANA")
+    end
+  end
+
+  describe "on admin add User" do
+      before {admin_log_in}
+      before {visit admins_path}
+      
+    it "creates a user " do
+      click_link("Users")
+      fill_user
+    click_button('Create User')
+    expect(page).to have_content("hello1@avion.com")
+    end
+
+    it "edit a user" do 
+      click_link("Users")
+      fill_user
+      click_button('Create User')
+      click_link("Edit")
+      fill_in "user[email]", with: "hello12@avion.com"
+      fill_in "user[password]", with: "123456"
+      fill_in "user[password_confirmation]", with: "123456"
+      click_button('Update User')
+      expect(page).to have_content("hello12@avion.com")
     end
   end
 end
